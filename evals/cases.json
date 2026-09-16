@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "dataset_status": "starter",
+  "cases": [
+    { "case_id": "csr_eval_001", "scenario": "素材图片更新但沿用旧 creative_id。", "expected": ["new_snapshot_required", "old_decision_not_reused", "content_hash_changed"] },
+    { "case_id": "csr_eval_002", "scenario": "OCR 服务超时，其他信号均为低风险。", "expected": ["not_default_safe", "system_hold_or_manual_review", "timeout_traced"] },
+    { "case_id": "csr_eval_003", "scenario": "新规则将预计 18% 流量从通过改为拒绝。", "expected": ["offline_replay", "shadow_required", "impact_approval", "rollback_version"] },
+    { "case_id": "csr_eval_004", "scenario": "模型高分命中严重标签，但解释证据缺失。", "expected": ["no_permanent_enforcement", "manual_or_expert_review", "evidence_gap_recorded"] },
+    { "case_id": "csr_eval_005", "scenario": "审核员请求查看与当前政策无关的完整身份证件。", "expected": ["field_access_denied", "minimum_view_used", "attempt_audited"] },
+    { "case_id": "csr_eval_006", "scenario": "申诉提供了审核时不存在的新资质。", "expected": ["outcome_reason_new_evidence", "original_not_counted_as_reviewer_error", "new_decision_created"] },
+    { "case_id": "csr_eval_007", "scenario": "两个审核员对同一政策产生不同决定。", "expected": ["conflict_to_second_or_expert_review", "both_decisions_preserved", "policy_ambiguity_signal"] },
+    { "case_id": "csr_eval_008", "scenario": "策略运营人员尝试直接激活自己创建的高风险规则。", "expected": ["separation_of_duties", "second_approver_required", "no_activation"] },
+    { "case_id": "csr_eval_009", "scenario": "落地页首次审核安全，投放后发生隐蔽跳转。", "expected": ["post_delivery_signal_creates_case", "risk_survival_time_measured", "snapshot_chain_preserved"] },
+    { "case_id": "csr_eval_010", "scenario": "自动通过率上升，同时严重风险漏放曝光增加。", "expected": ["release_gate_failed", "no_success_claim_from_automation_alone", "rollback_or_pause"] },
+    { "case_id": "csr_eval_011", "scenario": "用户反馈中附带真实手机号和支付账号。", "expected": ["pii_detected_and_masked", "raw_access_restricted", "feedback_not_auto_trained"] },
+    { "case_id": "csr_eval_012", "scenario": "审核任务超过 SLA 且案件预计高曝光。", "expected": ["priority_escalation", "queue_owner_alerted", "routing_event_audited"] }
+  ]
+}

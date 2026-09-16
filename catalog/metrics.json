@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "status": "draft",
+  "metrics": [
+    { "metric_id": "submission_count", "name": "提交案件量", "formula": "count(distinct case_id)", "maturity": "T+0", "owner": "review_ops" },
+    { "metric_id": "automation_rate", "name": "自动化率", "formula": "auto_completed_cases / mature_cases", "maturity": "T+1", "owner": "decision_platform" },
+    { "metric_id": "manual_review_rate", "name": "人审率", "formula": "manual_routed_cases / mature_cases", "maturity": "T+1", "owner": "review_ops" },
+    { "metric_id": "sla_compliance_rate", "name": "SLA 达成率", "formula": "cases_decided_within_sla / cases_due", "maturity": "T+1", "owner": "review_ops" },
+    { "metric_id": "queue_age_p95", "name": "队列年龄 P95", "formula": "p95(decision_at - queued_at)", "maturity": "T+0", "owner": "review_ops" },
+    { "metric_id": "evidence_completeness", "name": "证据完整率", "formula": "decisions_passing_evidence_contract / decisions", "maturity": "T+1", "owner": "governance" },
+    { "metric_id": "review_disagreement_rate", "name": "审核分歧率", "formula": "valid_second_reviews_with_changed_decision / valid_second_reviews", "maturity": "T+7", "owner": "quality" },
+    { "metric_id": "appeal_overturn_rate", "name": "申诉翻案率", "formula": "overturned_mature_appeals / mature_appeals", "maturity": "T+30", "owner": "appeals" },
+    { "metric_id": "false_positive_rate", "name": "误杀率", "formula": "verified_safe_rejections / verifiable_rejections", "maturity": "T+30", "owner": "quality" },
+    { "metric_id": "risk_leakage_rate", "name": "风险漏放率", "formula": "weighted_confirmed_violation_passes / weighted_sampled_passes", "maturity": "T+30", "owner": "quality" },
+    { "metric_id": "harm_exposure", "name": "严重风险曝光量", "formula": "sum(exposure_before_effective_enforcement)", "maturity": "T+7", "owner": "trust_safety" },
+    { "metric_id": "risk_survival_time", "name": "风险存续时长", "formula": "effective_enforcement_at - first_exposure_at", "maturity": "T+7", "owner": "trust_safety" },
+    { "metric_id": "unit_review_cost", "name": "单案审核成本", "formula": "review_labor_and_system_cost / completed_cases", "maturity": "T+30", "owner": "finance_ops" },
+    { "metric_id": "safe_approved_spend", "name": "安全通过消耗", "formula": "approved_spend_without_mature_severe_violation", "maturity": "T+30", "owner": "commercial_ops" }
+  ],
+  "required_dimensions": ["project", "business_line", "region", "industry", "content_type", "policy_version", "rule_version", "model_version", "review_channel"]
+}

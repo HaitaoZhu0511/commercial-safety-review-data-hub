@@ -1,0 +1,45 @@
+name: Validate public assets
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate JSON files and required assets
+        shell: python
+        run: |
+          import json
+          from pathlib import Path
+
+          root = Path(".")
+          files = list(root.rglob("*.json"))
+          assert files, "No JSON assets found"
+          for path in files:
+              with path.open("r", encoding="utf-8") as handle:
+                  json.load(handle)
+
+          required = [
+              "README.md",
+              "index.html",
+              "styles.css",
+              "app.js",
+              "catalog/entities.json",
+              "catalog/policies.json",
+              "catalog/signals.json",
+              "catalog/metrics.json",
+              "workflows/review-state-machine.json",
+              "evals/cases.json",
+          ]
+          missing = [path for path in required if not (root / path).exists()]
+          assert not missing, f"Missing required assets: {missing}"
+          print(f"Validated {len(files)} JSON files")

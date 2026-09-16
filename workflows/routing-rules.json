@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "status": "template",
+  "default_route": "standard_review",
+  "rules": [
+    { "priority": 10, "when": "missing_required_snapshot_or_signal", "route": "system_hold", "action": "request_evidence", "auto_decision": false },
+    { "priority": 20, "when": "critical_deterministic_policy_violation_and_evidence_complete", "route": "auto_reject", "action": "reject", "auto_decision": true },
+    { "priority": 30, "when": "regulated_industry_or_high_impact_action", "route": "regulated_industry", "action": "expert_review", "auto_decision": false },
+    { "priority": 40, "when": "minor_safety_signal", "route": "minor_safety", "action": "expert_review", "auto_decision": false },
+    { "priority": 50, "when": "fraud_or_malicious_redirect_signal", "route": "fraud_and_deception", "action": "specialist_review", "auto_decision": false },
+    { "priority": 60, "when": "high_reach_or_high_spend_forecast", "route": "high_reach_priority", "action": "priority_review", "auto_decision": false },
+    { "priority": 70, "when": "signal_conflict_or_low_confidence", "route": "standard_review", "action": "manual_review", "auto_decision": false },
+    { "priority": 80, "when": "low_risk_all_required_checks_pass", "route": "auto_approve", "action": "approve", "auto_decision": true }
+  ],
+  "hard_guards": [
+    "project_scope_must_match",
+    "content_snapshot_must_be_immutable",
+    "policy_rule_model_versions_must_be_pinned",
+    "missing_or_timeout_signal_must_not_default_to_safe",
+    "high_impact_enforcement_requires_human_approval",
+    "decision_must_have_reason_and_evidence"
+  ]
+}

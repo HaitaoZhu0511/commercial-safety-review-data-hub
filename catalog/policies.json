@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "template",
+  "notice": "Generic taxonomy only; not a production policy or enforcement guide.",
+  "categories": [
+    { "policy_category_id": "qualification", "name": "主体与资质", "examples": ["身份认证", "行业许可", "授权链路"], "default_route": "regulated_industry" },
+    { "policy_category_id": "prohibited_goods", "name": "禁止或限制商品", "examples": ["禁止交易", "地区限制", "年龄限制"], "default_route": "expert_review" },
+    { "policy_category_id": "misleading_claim", "name": "误导与虚假承诺", "examples": ["不可证实效果", "价格误导", "身份冒充"], "default_route": "standard_review" },
+    { "policy_category_id": "privacy", "name": "隐私与个人信息", "examples": ["敏感信息暴露", "不当收集", "缺少告知"], "default_route": "privacy_review" },
+    { "policy_category_id": "minor_safety", "name": "未成年人保护", "examples": ["不适龄内容", "不当定向", "诱导消费"], "default_route": "minor_safety" },
+    { "policy_category_id": "intellectual_property", "name": "知识产权", "examples": ["商标", "版权", "肖像与声音"], "default_route": "rights_review" },
+    { "policy_category_id": "malware_and_redirect", "name": "恶意软件与跳转", "examples": ["恶意下载", "隐蔽跳转", "域名劫持"], "default_route": "fraud_and_deception" },
+    { "policy_category_id": "financial_risk", "name": "金融与欺诈风险", "examples": ["高风险募集", "仿冒支付", "异常账户网络"], "default_route": "fraud_and_deception" },
+    { "policy_category_id": "content_safety", "name": "内容安全", "examples": ["暴力", "色情", "仇恨骚扰"], "default_route": "content_safety" },
+    { "policy_category_id": "regional_compliance", "name": "地域合规", "examples": ["地区禁限投", "语言要求", "披露要求"], "default_route": "regional_expert" }
+  ]
+}

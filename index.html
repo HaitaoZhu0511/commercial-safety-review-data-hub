@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="商业化安全审核数据中台公开参考实现：统一内容快照、策略版本、证据、人工审核、申诉与指标闭环。">
+  <title>商业化安全审核数据中台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Commercial Safety Hub</span>
+    </a>
+    <nav aria-label="主导航">
+      <a href="#system">体系</a>
+      <a href="#workflow">流程</a>
+      <a href="#cockpit">指标</a>
+      <a href="#opensource">开源调研</a>
+    </nav>
+    <a class="nav-action" href="https://github.com/HaitaoZhu0511/commercial-safety-review-data-hub">查看 GitHub <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> PUBLIC REFERENCE ARCHITECTURE · 2026</p>
+        <h1>让每一次商业审核<br><em>都有证据、有版本、有闭环</em></h1>
+        <p class="hero-lead">连接广告素材、落地页、主体、规则、模型、人审、申诉与处置。把分散的审核动作，沉淀成可追溯、可评测、可持续改进的数据系统。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#workflow">查看中台蓝图 <span aria-hidden="true">→</span></a>
+          <a class="button button-ghost" href="docs/商业化安全审核中台设计.md">阅读设计文档</a>
+        </div>
+        <p class="hero-note"><span aria-hidden="true">◉</span> 演示数据 · 非任何公司的内部审核系统</p>
+      </div>
+
+      <div class="hero-console reveal" aria-label="审核任务演示面板">
+        <div class="console-top">
+          <div><span class="live-dot"></span> REVIEW CONTROL</div>
+          <span>CN-02 · 14:32</span>
+        </div>
+        <div class="case-header">
+          <div>
+            <small>CASE ID</small>
+            <strong>RVW-8F21-A91</strong>
+          </div>
+          <span class="risk-pill">HIGH IMPACT</span>
+        </div>
+        <div class="evidence-stack">
+          <div class="evidence-row">
+            <span class="evidence-icon">01</span>
+            <div><strong>不可变内容快照</strong><small>creative_sha256 · landing_v4</small></div>
+            <span class="status-ok">READY</span>
+          </div>
+          <div class="evidence-row">
+            <span class="evidence-icon">02</span>
+            <div><strong>规则与模型信号</strong><small>policy_3.7 · vision_12.4</small></div>
+            <span class="status-warn">REVIEW</span>
+          </div>
+          <div class="evidence-row">
+            <span class="evidence-icon">03</span>
+            <div><strong>人工双人复核</strong><small>finance · senior queue</small></div>
+            <span class="status-pending">QUEUED</span>
+          </div>
+        </div>
+        <div class="trace-line"><span style="--w: 78%"></span></div>
+        <div class="console-footer"><span>证据完整度 78%</span><span>剩余 SLA 08:42</span></div>
+      </div>
+    </section>
+
+    <section class="stat-strip" aria-label="演示核心指标">
+      <article><span>今日任务</span><strong>38.4k</strong><small class="up">↑ 8.3%</small></article>
+      <article><span>自动化率</span><strong>72.6%</strong><small class="up">↑ 2.1pp</small></article>
+      <article><span>SLA 达成</span><strong>96.8%</strong><small>目标 95%</small></article>
+      <article><span>申诉翻案率</span><strong>1.7%</strong><small class="down">↓ 0.4pp</small></article>
+    </section>
+
+    <section class="section" id="system">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">01 · OPERATING MODEL</p><h2>一套中台，六个相互校验的数据域</h2></div>
+        <p>决策不是最终一行状态，而是一条包含输入、版本、证据、责任人与后续反馈的完整链路。</p>
+      </div>
+      <div class="domain-grid">
+        <article class="domain-card reveal"><span class="card-number">01</span><div class="domain-symbol snapshot">▧</div><h3>提交与快照</h3><p>固定审核时看到的素材、落地页、商品、资质与地域版本，防止“内容变了但 ID 没变”。</p><ul><li>内容哈希</li><li>版本血缘</li><li>地域上下文</li></ul></article>
+        <article class="domain-card reveal"><span class="card-number">02</span><div class="domain-symbol policy">⌘</div><h3>策略与模型</h3><p>统一管理 Policy、Rule、Model 和 Threshold，以草稿、影子、灰度、生效和回滚控制变更。</p><ul><li>规则即代码</li><li>模型注册表</li><li>发布审计</li></ul></article>
+        <article class="domain-card reveal"><span class="card-number">03</span><div class="domain-symbol signal">⌁</div><h3>信号与证据</h3><p>将 OCR、ASR、视觉、URL、主体和历史风险变成带来源与置信度的标准证据。</p><ul><li>最小化采集</li><li>来源追踪</li><li>置信度</li></ul></article>
+        <article class="domain-card reveal"><span class="card-number">04</span><div class="domain-symbol human">◎</div><h3>审核作业</h3><p>把人工审核建模为可观测的队列、技能组、任务、盲审、复审和超时升级流程。</p><ul><li>动态路由</li><li>双人复核</li><li>SLA 管理</li></ul></article>
+        <article class="domain-card reveal"><span class="card-number">05</span><div class="domain-symbol decision">◆</div><h3>决定与处置</h3><p>把政策结论与执行动作分离，并保存决定依据、责任主体、适用范围和执行回执。</p><ul><li>决定版本</li><li>处置解耦</li><li>完整审计</li></ul></article>
+        <article class="domain-card reveal"><span class="card-number">06</span><div class="domain-symbol feedback">↻</div><h3>申诉与反馈</h3><p>将翻案、漏放、抽检与事后风险转成规则缺陷、模型漂移和培训数据的改进任务。</p><ul><li>根因标签</li><li>Golden Set</li><li>闭环归因</li></ul></article>
+      </div>
+    </section>
+
+    <section class="workflow-section" id="workflow">
+      <div class="section section-heading inverse reveal">
+        <div><p class="eyebrow">02 · DECISION PIPELINE</p><h2>从提交到申诉，每一步都能重放</h2></div>
+        <p>在线执行追求稳定低延迟；数据中台负责证据、版本、评测和归因。两者通过标准事件与不可变 ID 连接。</p>
+      </div>
+      <div class="section pipeline reveal" role="list" aria-label="审核处理流程">
+        <article role="listitem"><span>01</span><b>内容提交</b><small>creative · product · URL</small></article>
+        <i aria-hidden="true">→</i>
+        <article role="listitem"><span>02</span><b>特征与证据</b><small>OCR · ASR · identity</small></article>
+        <i aria-hidden="true">→</i>
+        <article role="listitem"><span>03</span><b>规则与模型</b><small>policy · score · reason</small></article>
+        <i aria-hidden="true">→</i>
+        <article class="active" role="listitem"><span>04</span><b>决策编排</b><small>pass · reject · review</small></article>
+        <i aria-hidden="true">→</i>
+        <article role="listitem"><span>05</span><b>处置与反馈</b><small>action · appeal · learn</small></article>
+      </div>
+      <div class="section control-grid">
+        <article class="control-card reveal">
+          <p class="mini-label">CONTROL PLANE</p><h3>策略发布必须经过四道门</h3>
+          <ol class="release-steps">
+            <li><span>1</span><div><b>离线评测</b><small>Golden Set、边界 Case、群体切片</small></div><em>PASS</em></li>
+            <li><span>2</span><div><b>影子运行</b><small>只记录新旧差异，不影响线上决定</small></div><em>7 DAYS</em></li>
+            <li><span>3</span><div><b>灰度发布</b><small>小流量、可观测、带 Kill Switch</small></div><em>10%</em></li>
+            <li><span>4</span><div><b>效果归因</b><small>质量、安全、商业与公平性护栏</small></div><em>WATCH</em></li>
+          </ol>
+        </article>
+        <article class="control-card evidence-map reveal">
+          <p class="mini-label">EVIDENCE GRAPH</p><h3>一条决定，串起完整上下文</h3>
+          <div class="graph" aria-label="证据关系图">
+            <span class="node n1">内容快照</span><span class="node n2">特征</span><span class="node n3">规则版本</span><span class="node n4">模型版本</span><span class="node n5 core">决定</span><span class="node n6">审核任务</span><span class="node n7">处置</span><span class="node n8">申诉</span>
+            <svg viewBox="0 0 560 260" preserveAspectRatio="none" aria-hidden="true"><path d="M90 42 L280 130 M90 130 L280 130 M90 218 L280 130 M470 42 L280 130 M470 130 L280 130 M470 218 L280 130 M280 130 L375 220" /></svg>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section cockpit-section" id="cockpit">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow">03 · METRICS COCKPIT</p><h2>不只看处理量，更要看风险有没有活下来</h2></div>
+        <div class="tabs" role="tablist" aria-label="看板场景">
+          <button class="tab active" role="tab" aria-selected="true" data-view="overview">运行总览</button>
+          <button class="tab" role="tab" aria-selected="false" data-view="quality">质量复盘</button>
+          <button class="tab" role="tab" aria-selected="false" data-view="release">策略发布</button>
+        </div>
+      </div>
+      <div class="dashboard reveal">
+        <div class="dashboard-top">
+          <div><span class="pulse"></span><b id="view-title">全链路运行健康</b><small id="view-subtitle">过去 24 小时 · 演示数据</small></div>
+          <div class="filters"><span>全部业务线⌄</span><span>中国区⌄</span><span>今日⌄</span></div>
+        </div>
+        <div class="kpi-grid">
+          <article><small id="kpi1-label">入口任务</small><strong id="kpi1-value">38,421</strong><span id="kpi1-delta" class="positive">+8.3%</span></article>
+          <article><small id="kpi2-label">自动化率</small><strong id="kpi2-value">72.6%</strong><span id="kpi2-delta" class="positive">+2.1pp</span></article>
+          <article><small id="kpi3-label">SLA 达成</small><strong id="kpi3-value">96.8%</strong><span id="kpi3-delta" class="positive">+1.8pp</span></article>
+          <article><small id="kpi4-label">风险存续 P95</small><strong id="kpi4-value">18m</strong><span id="kpi4-delta" class="negative">-4m</span></article>
+        </div>
+        <div class="dashboard-body">
+          <div class="chart-panel">
+            <div class="panel-title"><div><b id="chart-title">审核量与风险命中趋势</b><small>按小时聚合</small></div><div class="legend"><span><i class="legend-a"></i>审核量</span><span><i class="legend-b"></i>风险命中</span></div></div>
+            <div class="chart" id="chart" aria-label="审核趋势柱状图"></div>
+            <div class="x-axis"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>24:00</span></div>
+          </div>
+          <div class="queue-panel">
+            <div class="panel-title"><div><b>队列健康度</b><small>按风险与行业路由</small></div><span class="healthy">HEALTHY</span></div>
+            <div id="queue-list" class="queue-list"></div>
+          </div>
+        </div>
+        <div class="guardrail"><span>安全护栏</span><p id="guardrail-text">自动化率上升时，漏放曝光、申诉翻案与群体差异必须保持在阈值内。</p><b id="guardrail-state">全部通过 6 / 6</b></div>
+      </div>
+    </section>
+
+    <section class="opensource-section" id="opensource">
+      <div class="section">
+        <div class="section-heading inverse reveal">
+          <div><p class="eyebrow">04 · OPEN-SOURCE STUDY</p><h2>组合公开能力，不冒充“大厂内部方案”</h2></div>
+          <p>GitHub 上少有完整商业审核系统。项目拆解相邻开源能力，再用统一数据模型把它们组合起来。</p>
+        </div>
+        <div class="source-grid">
+          <a class="source-card reveal" href="https://github.com/roostorg/coop"><span>工作台</span><h3>ROOST Coop</h3><p>队列、路由、自动处置与审核运营。</p><b>REVIEW OPS ↗</b></a>
+          <a class="source-card reveal" href="https://github.com/alibaba/QLExpress"><span>规则引擎</span><h3>Alibaba QLExpress</h3><p>规则 DSL、追踪、隔离与执行超时。</p><b>RULES ↗</b></a>
+          <a class="source-card reveal" href="https://github.com/bytedance/arishem"><span>规则引擎</span><h3>ByteDance arishem</h3><p>轻量高性能条件组合与规则执行。</p><b>RULES ↗</b></a>
+          <a class="source-card reveal" href="https://github.com/open-policy-agent/opa"><span>策略治理</span><h3>Open Policy Agent</h3><p>上下文决策、策略即代码与决策日志。</p><b>POLICY ↗</b></a>
+          <a class="source-card reveal" href="https://github.com/data-privacy-stack/presidio"><span>隐私保护</span><h3>Presidio</h3><p>敏感信息识别、脱敏与自定义识别器。</p><b>PRIVACY ↗</b></a>
+          <a class="source-card reveal" href="https://github.com/HumanSignal/label-studio"><span>数据闭环</span><h3>Label Studio</h3><p>多模态标注、预标注、复核与导出。</p><b>HUMAN LOOP ↗</b></a>
+        </div>
+        <div class="source-footer reveal"><p>已记录 12 个项目的采用点、边界与许可证提示。</p><a href="docs/开源项目调研.md">查看完整调研矩阵 <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="section closing reveal">
+      <p class="eyebrow">START WITH GOVERNANCE</p>
+      <h2>先统一事实，再自动化决定</h2>
+      <p>从数据契约、证据协议、状态机和指标口径开始，用影子运行验证策略，再逐步接入真实业务。</p>
+      <div class="hero-actions"><a class="button button-primary" href="README.md">打开实施说明</a><a class="button button-ghost dark" href="contracts/decision.schema.json">查看决定协议</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Commercial Safety Hub</span></div>
+    <p>公开参考架构 · 示例数据 · 不包含内部规则或真实业务数据</p>
+    <span>MIT · 2026</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

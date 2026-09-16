@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-09-16",
+  "status": "research_only",
+  "notice": "No source code from these repositories is vendored. Re-check repository status, license and dependencies before reuse.",
+  "repositories": [
+    {
+      "name": "ROOST Coop",
+      "url": "https://github.com/roostorg/coop",
+      "category": "moderation_platform",
+      "patterns": ["review_console", "queues", "routing", "rules", "analytics", "enforcement"],
+      "decision": "reference_architecture"
+    },
+    {
+      "name": "Alibaba QLExpress",
+      "url": "https://github.com/alibaba/QLExpress",
+      "category": "business_rule_engine",
+      "patterns": ["rule_dsl", "syntax_validation", "expression_trace", "isolation", "timeout"],
+      "decision": "evaluate_for_rule_dsl"
+    },
+    {
+      "name": "ByteDance arishem",
+      "url": "https://github.com/bytedance/arishem",
+      "category": "rule_engine",
+      "patterns": ["lightweight_runtime", "nested_conditions", "high_throughput"],
+      "decision": "reference_runtime_design"
+    },
+    {
+      "name": "Microsoft RulesEngine",
+      "url": "https://github.com/microsoft/RulesEngine",
+      "category": "business_rule_engine",
+      "patterns": ["json_workflows", "nested_rules", "rule_result_tree", "external_rule_store"],
+      "decision": "reference_rule_package"
+    },
+    {
+      "name": "Open Policy Agent",
+      "url": "https://github.com/open-policy-agent/opa",
+      "category": "policy_engine",
+      "patterns": ["policy_as_code", "bundles", "decision_logs", "context_aware_enforcement"],
+      "decision": "evaluate_for_authorization_and_release_gates"
+    },
+    {
+      "name": "Cedar",
+      "url": "https://github.com/cedar-policy/cedar",
+      "category": "authorization",
+      "patterns": ["principal_action_resource_context", "schema_validation", "default_deny", "policy_analysis"],
+      "decision": "evaluate_for_fine_grained_authorization"
+    },
+    {
+      "name": "Presidio",
+      "url": "https://github.com/data-privacy-stack/presidio",
+      "category": "privacy",
+      "patterns": ["pii_detection", "text_anonymization", "image_redaction", "structured_data"],
+      "decision": "evaluate_behind_authenticated_gateway"
+    },
+    {
+      "name": "Label Studio",
+      "url": "https://github.com/HumanSignal/label-studio",
+      "category": "human_review_and_labeling",
+      "patterns": ["multimodal_annotation", "model_prelabel", "review", "export"],
+      "decision": "reference_for_golden_set_workflow"
+    },
+    {
+      "name": "Argilla",
+      "url": "https://github.com/argilla-io/argilla",
+      "category": "human_feedback",
+      "patterns": ["expert_feedback", "dataset_curation", "active_learning", "llm_feedback"],
+      "decision": "reference_for_feedback_quarantine"
+    },
+    {
+      "name": "Microsoft Responsible AI Toolbox",
+      "url": "https://github.com/microsoft/responsible-ai-toolbox",
+      "category": "model_evaluation",
+      "patterns": ["error_cohorts", "fairness", "interpretability", "data_balance"],
+      "decision": "reference_for_model_quality_dashboard"
+    },
+    {
+      "name": "Unleash",
+      "url": "https://github.com/Unleash/unleash",
+      "category": "progressive_delivery",
+      "patterns": ["canary", "targeting", "environment_isolation", "kill_switch"],
+      "decision": "reference_for_policy_and_model_rollout"
+    },
+    {
+      "name": "AWS Video Streaming Advertising Lens",
+      "url": "https://github.com/aws-samples/sample-well-architected-custom-lens",
+      "category": "advertising_risk_checklist",
+      "patterns": ["ad_fraud", "content_validation", "regulatory_review", "defense_in_depth"],
+      "decision": "reference_for_governance_checklist"
+    }
+  ]
+}

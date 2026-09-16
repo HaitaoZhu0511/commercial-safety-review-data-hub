@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/commercial-safety/evidence.schema.json",
+  "title": "Commercial Safety Evidence",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["evidence_id", "case_id", "evidence_type", "source", "snapshot_hash", "data_tier", "created_at"],
+  "properties": {
+    "evidence_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "evidence_type": { "enum": ["content_snapshot", "qualification", "rule_trace", "model_signal", "url_snapshot", "account_history", "reviewer_note", "appeal_material", "enforcement_receipt"] },
+    "source": { "type": "string", "minLength": 1 },
+    "source_version": { "type": "string" },
+    "snapshot_hash": { "type": "string", "minLength": 16 },
+    "storage_ref": { "type": "string" },
+    "data_tier": { "enum": ["L0", "L1", "L2", "L3"] },
+    "region": { "type": "string" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "expires_at": { "type": "string", "format": "date-time" },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

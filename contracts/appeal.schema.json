@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/commercial-safety/appeal.schema.json",
+  "title": "Commercial Safety Appeal",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["appeal_id", "case_id", "challenged_decision_id", "status", "submitted_at"],
+  "properties": {
+    "appeal_id": { "type": "string", "minLength": 1 },
+    "case_id": { "type": "string", "minLength": 1 },
+    "challenged_decision_id": { "type": "string", "minLength": 1 },
+    "status": { "enum": ["submitted", "triaged", "reviewing", "waiting_material", "upheld", "overturned", "remanded", "withdrawn", "expired"] },
+    "appellant_type": { "enum": ["advertiser", "agency", "internal", "other"] },
+    "reason_code": { "type": "string" },
+    "material_evidence_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+    "outcome_reason": { "enum": ["original_correct", "original_error", "new_evidence", "policy_changed", "system_defect", "insufficient_information", "not_applicable"] },
+    "reviewer_id": { "type": "string" },
+    "resulting_decision_id": { "type": "string" },
+    "submitted_at": { "type": "string", "format": "date-time" },
+    "decided_at": { "type": "string", "format": "date-time" }
+  }
+}

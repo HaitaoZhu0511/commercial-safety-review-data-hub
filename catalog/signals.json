@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "status": "template",
+  "signals": [
+    { "signal_id": "text_ocr", "source_type": "extractor", "value_type": "text_ref", "data_tier": "L2", "quality": ["coverage", "character_error_rate", "language"] },
+    { "signal_id": "audio_asr", "source_type": "extractor", "value_type": "text_ref", "data_tier": "L2", "quality": ["coverage", "word_error_rate", "language"] },
+    { "signal_id": "visual_risk", "source_type": "model", "value_type": "label_score", "data_tier": "L1", "quality": ["precision", "recall", "calibration", "latency"] },
+    { "signal_id": "text_risk", "source_type": "model", "value_type": "label_score", "data_tier": "L1", "quality": ["precision", "recall", "cohort_bias", "latency"] },
+    { "signal_id": "url_chain", "source_type": "crawler", "value_type": "snapshot_ref", "data_tier": "L2", "quality": ["crawl_success", "freshness", "region"] },
+    { "signal_id": "domain_reputation", "source_type": "reputation", "value_type": "score_reason", "data_tier": "L1", "quality": ["freshness", "source_coverage"] },
+    { "signal_id": "qualification_status", "source_type": "registry", "value_type": "status_expiry", "data_tier": "L2", "quality": ["verified_at", "issuer", "expiry"] },
+    { "signal_id": "account_history", "source_type": "internal_aggregate", "value_type": "risk_summary", "data_tier": "L2", "quality": ["window", "maturity", "project_scope"] },
+    { "signal_id": "payment_anomaly", "source_type": "model", "value_type": "score_reason", "data_tier": "L3", "quality": ["precision", "recall", "maturity"] },
+    { "signal_id": "user_report", "source_type": "post_delivery", "value_type": "aggregated_report", "data_tier": "L2", "quality": ["abuse_filter", "volume", "severity"] }
+  ]
+}

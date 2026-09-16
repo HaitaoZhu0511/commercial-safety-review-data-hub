@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "status": "template",
+  "entities": [
+    { "entity_id": "advertiser", "name": "广告主", "primary_key": "advertiser_id", "data_tier": "L2", "description": "商业主体及认证状态" },
+    { "entity_id": "commercial_account", "name": "商业账户", "primary_key": "account_id", "data_tier": "L2", "description": "投放或推广账户及历史状态" },
+    { "entity_id": "campaign", "name": "Campaign", "primary_key": "campaign_id", "data_tier": "L1", "description": "营销目标、地域、定向和投放配置" },
+    { "entity_id": "creative", "name": "广告素材", "primary_key": "creative_id", "data_tier": "L2", "description": "文案、图片、视频、音频或互动素材" },
+    { "entity_id": "content_snapshot", "name": "内容快照", "primary_key": "snapshot_id", "data_tier": "L2", "description": "审核时不可变内容版本、哈希和存储引用" },
+    { "entity_id": "landing_page", "name": "落地页", "primary_key": "landing_page_id", "data_tier": "L2", "description": "URL、跳转链、页面快照和域名主体" },
+    { "entity_id": "product", "name": "商品或服务", "primary_key": "product_id", "data_tier": "L1", "description": "SKU、行业、价格、资质和承诺" },
+    { "entity_id": "policy", "name": "政策", "primary_key": "policy_id", "data_tier": "L1", "description": "业务、平台与法规要求" },
+    { "entity_id": "rule_version", "name": "规则版本", "primary_key": "rule_version_id", "data_tier": "L1", "description": "可执行条件、状态、Owner 与发布血缘" },
+    { "entity_id": "model_version", "name": "模型版本", "primary_key": "model_version_id", "data_tier": "L1", "description": "任务、标签、阈值、适用范围和限制" },
+    { "entity_id": "review_case", "name": "审核案件", "primary_key": "case_id", "data_tier": "L2", "description": "一次审核主链路和当前状态" },
+    { "entity_id": "review_task", "name": "审核任务", "primary_key": "task_id", "data_tier": "L2", "description": "队列、分配、审核层级、SLA 与处理结果" },
+    { "entity_id": "decision", "name": "审核决定", "primary_key": "decision_id", "data_tier": "L2", "description": "自动或人工结论、理由和证据" },
+    { "entity_id": "enforcement", "name": "处置", "primary_key": "enforcement_id", "data_tier": "L2", "description": "停投、限制、下架等执行及回执" },
+    { "entity_id": "appeal", "name": "申诉", "primary_key": "appeal_id", "data_tier": "L2", "description": "申诉材料、复核、翻案和原因" },
+    { "entity_id": "evidence", "name": "证据", "primary_key": "evidence_id", "data_tier": "L2", "description": "快照、信号、规则、模型和人工说明引用" }
+  ]
+}
