@@ -43,6 +43,8 @@ jobs:
               "evals/cases.json",
               "docs/国内外审核与风控对标.md",
               "docs/智能安全策略运营能力模型.md",
+              "research/tencent-game-security-competition-2021-2025/README.md",
+              "research/tencent-game-security-competition-2021-2025/sources.json",
           ]
           missing = [path for path in required if not (root / path).exists()]
           assert not missing, f"Missing required assets: {missing}"

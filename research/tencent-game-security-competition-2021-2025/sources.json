@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0",
+  "scope": "Tencent Game Security Technology Competition",
+  "period": {"from": 2021, "to": 2025, "definition": "five complete calendar years"},
+  "reviewed_at": "2026-09-24",
+  "notice": "Links only. No challenge binaries, datasets or third-party source code are vendored.",
+  "official_editions": [
+    {
+      "year": 2021,
+      "edition": 6,
+      "tracks": ["pc_client_security", "android_client_security", "machine_learning", "natural_language_processing"],
+      "pages": {
+        "home": "https://gslab.qq.com/html/competition/2021/index.htm",
+        "preparation": "https://gslab.qq.com/html/competition/2021/race-before.htm",
+        "preliminary": "https://gslab.qq.com/html/competition/2021/race-pre.htm",
+        "preliminary_result": "https://gslab.qq.com/html/competition/2021/race-pre-result.htm",
+        "final": "https://gslab.qq.com/html/competition/2021/race-final.htm",
+        "final_result": "https://gslab.qq.com/html/competition/2021/race-final-result.htm"
+      }
+    },
+    {
+      "year": 2022,
+      "edition": 7,
+      "tracks": ["pc_client_security", "android_client_security", "machine_learning", "peace_elite_security"],
+      "pages": {
+        "home": "https://gslab.qq.com/html/competition/2022/index.htm",
+        "preparation": "https://gslab.qq.com/html/competition/2022/race-before.htm",
+        "preliminary": "https://gslab.qq.com/html/competition/2022/race-pre.htm",
+        "preliminary_result": "https://gslab.qq.com/html/competition/2022/race-pre-result.htm",
+        "final": "https://gslab.qq.com/html/competition/2022/race-final.htm",
+        "final_result": "https://gslab.qq.com/html/competition/2022/race-final-result.htm"
+      }
+    },
+    {
+      "year": 2023,
+      "edition": 8,
+      "tracks": ["pc_client_security", "android_client_security", "machine_learning"],
+      "pages": {
+        "home": "https://gslab.qq.com/html/competition/2023/index.htm",
+        "preparation": "https://gslab.qq.com/html/competition/2023/race-before.htm",
+        "preliminary": "https://gslab.qq.com/html/competition/2023/race-pre.htm",
+        "preliminary_result": "https://gslab.qq.com/html/competition/2023/race-pre-result.htm",
+        "final": "https://gslab.qq.com/html/competition/2023/race-final.htm",
+        "final_result": "https://gslab.qq.com/html/competition/2023/race-final-result.htm"
+      }
+    },
+    {
+      "year": 2024,
+      "edition": 9,
+      "tracks": ["pc_client_security", "android_client_security", "machine_learning"],
+      "pages": {
+        "home": "https://gslab.qq.com/html/competition/2024/index.htm",
+        "preparation": "https://gslab.qq.com/html/competition/2024/race-before.htm",
+        "preliminary": "https://gslab.qq.com/html/competition/2024/race-pre.htm",
+        "preliminary_result": "https://gslab.qq.com/html/competition/2024/race-pre-result.htm",
+        "final": "https://gslab.qq.com/html/competition/2024/race-final.htm",
+        "final_result": "https://gslab.qq.com/html/competition/2024/race-final-result.htm"
+      }
+    },
+    {
+      "year": 2025,
+      "edition": 10,
+      "tracks": ["pc_client_security", "android_client_security", "machine_learning"],
+      "pages": {
+        "home": "https://gslab.qq.com/html/competition/2025/index.htm",
+        "preparation": "https://gslab.qq.com/html/competition/2025/race-before.htm",
+        "preliminary": "https://gslab.qq.com/html/competition/2025/race-pre.htm",
+        "preliminary_result": "https://gslab.qq.com/html/competition/2025/race-pre-result.htm",
+        "final": "https://gslab.qq.com/html/competition/2025/race-final.htm",
+        "final_result": "https://gslab.qq.com/html/competition/2025/race-final-result.htm"
+      }
+    }
+  ],
+  "current_tracking": {
+    "year": 2026,
+    "edition": 11,
+    "included_in_primary_period": false,
+    "tracks": ["pc_client_security", "android_client_security", "game_security_ai"],
+    "pages": {
+      "home": "https://gslab.qq.com/html/competition/2026/index.htm",
+      "preliminary": "https://gslab.qq.com/html/competition/2026/race-pre.htm",
+      "final_result": "https://gslab.qq.com/html/competition/2026/race-final-result.htm"
+    },
+    "quality_note": "The final-result commentary section contained template placeholder text during review and was excluded from analysis."
+  },
+  "public_github_references": [
+    {
+      "year": 2021,
+      "repository": "librauee/gslab2021",
+      "url": "https://github.com/librauee/gslab2021",
+      "topic": "machine-learning behavior sequence detection",
+      "license": "not_detected",
+      "reuse": "reference_only"
+    },
+    {
+      "year": 2022,
+      "repository": "librauee/gslab2022",
+      "url": "https://github.com/librauee/gslab2022",
+      "topic": "PE malware classification and MOBA outcome modeling",
+      "license": "not_detected",
+      "reuse": "reference_only"
+    },
+    {
+      "year": 2024,
+      "repository": "iammcy/Malicious-Text-Recognition",
+      "url": "https://github.com/iammcy/Malicious-Text-Recognition",
+      "topic": "multilingual malicious text classification",
+      "license": "not_detected",
+      "reuse": "reference_only"
+    },
+    {
+      "year": 2025,
+      "repository": "saileaxh/2025-tencent-game-security-race-pre",
+      "url": "https://github.com/saileaxh/2025-tencent-game-security-race-pre",
+      "topic": "PC preliminary public solution source",
+      "license": "Apache-2.0",
+      "reuse": "review_license_and_safety_before_use"
+    }
+  ],
+  "availability_notes": [
+    "Official HTML pages were reachable during review.",
+    "Some historical direct ZIP URLs returned access-control or not-found responses; use the official preliminary/final pages as canonical entry points.",
+    "Third-party repositories are snapshots of participant approaches, not official answers."
+  ]
+}

@@ -33,6 +33,17 @@
 
 详细证据等级、横向矩阵与官方来源见[国内外审核与风控对标](docs/国内外审核与风控对标.md)。截图岗位涉及的风险闭环、Prompt/Agent 策略、badcase、漂移、A/B 和跨团队落地，已整理为[智能安全策略运营能力模型](docs/智能安全策略运营能力模型.md)。
 
+## 腾讯游戏安全技术竞赛五年资料
+
+新增独立研究目录：[2021—2025 腾讯游戏安全技术竞赛资料与分析](research/tencent-game-security-competition-2021-2025/README.md)。目录收录五届官方主页、赛前资料、初赛/决赛入口、公开 GitHub 参赛方案与许可证状态，并详细分析：
+
+- PC 赛道从应用层分析、内核机制走向 VT/EPT 虚拟化边界；
+- Android 赛道从逆向与保护分析转向游戏开发者视角的多层防御；
+- 机器学习赛道从标签噪声行为序列、PE 分类，演化到小样本视频、跨语言文本和跨游戏泛化；
+- 如何把赛题转成风险本体、证据目录、评测集和安全审核数据 Agent 能力。
+
+资料只提供官方入口和合规分析，不重新托管题包、二进制、数据集或无许可证代码，也不提供绕过真实游戏安全系统的操作步骤。
+
 ## 目标架构
 
 ```mermaid
@@ -122,6 +133,11 @@ commercial-safety-review-data-hub/
 ├─ contracts/                             # 任务、决定、证据与申诉 JSON Schema
 ├─ workflows/                             # 审核状态机与路由规则样板
 ├─ evals/                                 # 规则、模型、权限、证据和流程评测 Case
+├─ research/
+│  └─ tencent-game-security-competition-2021-2025/
+│     ├─ years/                           # 2021—2025 逐年资料与解析
+│     ├─ analysis/                        # 五年趋势、能力图谱与学习路线
+│     └─ sources.json                     # 官方与 GitHub 来源、许可证状态
 ├─ sources/                               # GitHub 调研来源与采用决策
 ├─ docs/
 │  ├─ 开源项目调研.md
@@ -154,6 +170,7 @@ python -m http.server 4173
 - [x] 阿里、字节、腾讯、OpenAI、Anthropic、Meta/Instagram 公开实践对标
 - [x] Prompt、RAG、Agent、工具权限和过度拒答指标体系
 - [x] 智能安全策略运营岗位能力模型与 30/60/90 天建设计划
+- [x] 2021—2025 腾讯游戏安全技术竞赛资料索引与五年趋势分析
 - [x] 基础评测 Case 和 GitHub Actions 校验
 - [ ] 接入真实身份、政策中心、内容快照和审核队列
 - [ ] 接入 OCR/ASR/视觉/URL/主体风险信号
