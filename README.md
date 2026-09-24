@@ -18,6 +18,21 @@
 
 本项目把“策略执行系统”和“审核数据系统”分开：在线系统负责低延迟判定，数据中台负责版本、证据、评测、分析、追溯和改进闭环。
 
+## 国内外公司公开实践对标
+
+本项目新增了阿里巴巴、字节跳动、腾讯、OpenAI、Anthropic、Meta/Instagram 六组公开实践。对标不复刻任何公司的内部系统，而是把官方政策、透明度报告和产品文档转成可验证的中台能力：
+
+| 公司/产品 | 公开实践重点 | 本项目吸收的能力 |
+| --- | --- | --- |
+| 阿里巴巴 | 商家、商品、规则、知识产权和多模态内容 | 经营对象联动、权利证明与规则版本 |
+| 字节跳动 | 内容分发、广告投放、主动发现和事后治理 | 分发资格、投后监控与主动发现指标 |
+| 腾讯 | 文图音视、规则/模型/样本库组合、人机协同 | 多模态信号复用与场景策略编排 |
+| OpenAI | 使用政策、Moderation、能力评估和 Agent 安全 | Prompt/RAG/Tool/Side Effect 全链路追踪 |
+| Anthropic | RSP、能力阈值、越狱防护和模型报告 | 风险阈值门禁、红队与过度拒答平衡 |
+| Meta / Instagram | UGC、主动检测、分级处置、申诉恢复和透明度 | 决定与处置分离、恢复率和风险流行率 |
+
+详细证据等级、横向矩阵与官方来源见[国内外审核与风控对标](docs/国内外审核与风控对标.md)。截图岗位涉及的风险闭环、Prompt/Agent 策略、badcase、漂移、A/B 和跨团队落地，已整理为[智能安全策略运营能力模型](docs/智能安全策略运营能力模型.md)。
+
 ## 目标架构
 
 ```mermaid
@@ -102,6 +117,8 @@ flowchart LR
 commercial-safety-review-data-hub/
 ├─ index.html / styles.css / app.js       # 静态产品与指标看板
 ├─ catalog/                               # 实体、政策分类、信号与指标目录
+│  ├─ company-practices.json              # 国内外公司公开实践与证据等级
+│  └─ agent-risk-metrics.json             # Prompt/RAG/Agent 风险指标
 ├─ contracts/                             # 任务、决定、证据与申诉 JSON Schema
 ├─ workflows/                             # 审核状态机与路由规则样板
 ├─ evals/                                 # 规则、模型、权限、证据和流程评测 Case
@@ -109,6 +126,8 @@ commercial-safety-review-data-hub/
 ├─ docs/
 │  ├─ 开源项目调研.md
 │  ├─ 商业化安全审核中台设计.md
+│  ├─ 国内外审核与风控对标.md
+│  ├─ 智能安全策略运营能力模型.md
 │  ├─ 指标体系与运营看板.md
 │  └─ 数据治理与合规边界.md
 └─ .github/workflows/validate.yml         # JSON、Schema 和静态资产校验
@@ -132,6 +151,9 @@ python -m http.server 4173
 - [x] 状态机、队列路由与双人复核样板
 - [x] 自动化、质量、风险、申诉和商业指标框架
 - [x] 开源项目调研及采用/谨慎采用/不采用决策
+- [x] 阿里、字节、腾讯、OpenAI、Anthropic、Meta/Instagram 公开实践对标
+- [x] Prompt、RAG、Agent、工具权限和过度拒答指标体系
+- [x] 智能安全策略运营岗位能力模型与 30/60/90 天建设计划
 - [x] 基础评测 Case 和 GitHub Actions 校验
 - [ ] 接入真实身份、政策中心、内容快照和审核队列
 - [ ] 接入 OCR/ASR/视觉/URL/主体风险信号

@@ -37,8 +37,12 @@ jobs:
               "catalog/policies.json",
               "catalog/signals.json",
               "catalog/metrics.json",
+              "catalog/company-practices.json",
+              "catalog/agent-risk-metrics.json",
               "workflows/review-state-machine.json",
               "evals/cases.json",
+              "docs/国内外审核与风控对标.md",
+              "docs/智能安全策略运营能力模型.md",
           ]
           missing = [path for path in required if not (root / path).exists()]
           assert not missing, f"Missing required assets: {missing}"

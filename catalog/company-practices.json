@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "reviewed_at": "2026-09-24",
+  "evidence_policy": {
+    "A": "official_policy_or_transparency_report",
+    "B": "official_product_or_help_documentation",
+    "C": "architecture_inference_not_internal_fact"
+  },
+  "notice": "Public evidence only. Architecture inferences must not be represented as internal company implementations.",
+  "companies": [
+    {
+      "company_id": "alibaba",
+      "company": "Alibaba",
+      "primary_surface": ["commerce", "advertising", "merchant", "intellectual_property"],
+      "public_evidence": [
+        "Platform rules are published through the Taobao rule center.",
+        "Taobao and Tmall operate a public intellectual-property protection portal.",
+        "Alibaba Cloud describes multimodal moderation for image, video, text and audio."
+      ],
+      "architecture_inference": ["link merchant, qualification, product, creative, landing page, transaction and appeal evidence"],
+      "sources": [
+        {"title": "Taobao Rule Center", "url": "https://rulechannel.taobao.com/", "evidence_level": "A"},
+        {"title": "Taotian IPP", "url": "https://ipp.alibabagroup.com/", "evidence_level": "A"},
+        {"title": "Alibaba Cloud Content Moderation", "url": "https://www.alibabacloud.com/help/en/content-moderation/latest/what-is-content-moderation", "evidence_level": "B"}
+      ]
+    },
+    {
+      "company_id": "bytedance",
+      "company": "ByteDance",
+      "primary_surface": ["content_distribution", "advertising", "commerce", "creator_ecosystem"],
+      "public_evidence": [
+        "Ocean Engine exposes multiple advertising and commercial surfaces.",
+        "Volcengine exposes content-safety documentation.",
+        "TikTok publishes community-guidelines enforcement transparency material."
+      ],
+      "architecture_inference": ["separate policy violation from distribution eligibility and monitor post-delivery changes"],
+      "sources": [
+        {"title": "Ocean Engine", "url": "https://www.oceanengine.com/", "evidence_level": "B"},
+        {"title": "Ocean Engine Help", "url": "https://support.oceanengine.com/", "evidence_level": "B"},
+        {"title": "Volcengine Content Safety", "url": "https://www.volcengine.com/docs/6256/65101", "evidence_level": "B"},
+        {"title": "TikTok Transparency", "url": "https://www.tiktok.com/transparency/en/community-guidelines-enforcement", "evidence_level": "A"}
+      ]
+    },
+    {
+      "company_id": "tencent",
+      "company": "Tencent",
+      "primary_surface": ["social", "content", "advertising", "mini_programs"],
+      "public_evidence": [
+        "Tencent Cloud T-Sec describes text, image, audio and video moderation.",
+        "The product describes model, sample-library and rule-library combinations for different scenarios.",
+        "The product supports machine review and human-machine workflows."
+      ],
+      "architecture_inference": ["reuse multimodal signals while isolating business permissions and enforcement actions"],
+      "sources": [
+        {"title": "Tencent Cloud T-Sec Content Moderation", "url": "https://cloud.tencent.com/product/tms", "evidence_level": "B"},
+        {"title": "Tencent Marketing", "url": "https://e.qq.com/ads/", "evidence_level": "B"},
+        {"title": "Tencent ESG", "url": "https://www.tencent.com/en-us/esg.html", "evidence_level": "A"}
+      ]
+    },
+    {
+      "company_id": "openai",
+      "company": "OpenAI",
+      "primary_surface": ["foundation_models", "api", "chat", "agents"],
+      "public_evidence": [
+        "Usage policies define product and API boundaries.",
+        "The Moderation API classifies text and image inputs.",
+        "Preparedness and agent-safety guidance connect evaluation, safeguards, prompt injection and tool controls."
+      ],
+      "architecture_inference": ["version prompt, model, retrieved context, tool proposal, approval, execution and side effect as one trace"],
+      "sources": [
+        {"title": "Usage Policies", "url": "https://openai.com/policies/usage-policies/", "evidence_level": "A"},
+        {"title": "Moderation", "url": "https://developers.openai.com/api/docs/guides/moderation", "evidence_level": "B"},
+        {"title": "Preparedness Framework", "url": "https://openai.com/index/updating-our-preparedness-framework/", "evidence_level": "A"},
+        {"title": "Agent Builder Safety", "url": "https://developers.openai.com/api/docs/guides/agent-builder-safety", "evidence_level": "B"}
+      ]
+    },
+    {
+      "company_id": "anthropic",
+      "company": "Anthropic",
+      "primary_surface": ["foundation_models", "api", "chat", "agents"],
+      "public_evidence": [
+        "The Responsible Scaling Policy links capability thresholds, evaluation and deployment safeguards.",
+        "Constitutional Classifiers research reports jailbreak robustness together with over-refusal and compute tradeoffs.",
+        "The Transparency Hub publishes model capabilities, safety evaluations and deployment safeguards."
+      ],
+      "architecture_inference": ["trigger stronger evaluation and safeguard requirements as capabilities approach defined thresholds"],
+      "sources": [
+        {"title": "Responsible Scaling Policy", "url": "https://www.anthropic.com/responsible-scaling-policy", "evidence_level": "A"},
+        {"title": "Constitutional Classifiers", "url": "https://www.anthropic.com/news/constitutional-classifiers", "evidence_level": "A"},
+        {"title": "Transparency Hub", "url": "https://www.anthropic.com/transparency", "evidence_level": "A"}
+      ]
+    },
+    {
+      "company_id": "meta",
+      "company": "Meta",
+      "products": ["Facebook", "Instagram"],
+      "primary_surface": ["ugc", "advertising", "recommendation", "accounts"],
+      "public_evidence": [
+        "Community Standards apply across relevant Meta products.",
+        "Enforcement reports expose content-actioned, prevalence, proactive detection, appeals and restored-content views.",
+        "Meta documents demotion as an enforcement option distinct from removal."
+      ],
+      "architecture_inference": ["separate policy decision from removal, demotion, warning, recommendation and account actions"],
+      "sources": [
+        {"title": "Community Standards", "url": "https://transparency.meta.com/policies/community-standards/", "evidence_level": "A"},
+        {"title": "Community Standards Enforcement Report", "url": "https://transparency.meta.com/reports/community-standards-enforcement/", "evidence_level": "A"},
+        {"title": "Types of Content We Demote", "url": "https://transparency.meta.com/features/approach-to-ranking/types-of-content-we-demote/", "evidence_level": "A"}
+      ]
+    }
+  ]
+}

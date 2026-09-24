@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "status": "draft",
+  "metrics": [
+    {"metric_id": "jailbreak_attack_success_rate", "name": "越狱攻击成功率", "formula": "successful_harmful_completions / valid_attack_attempts", "guardrail": true, "owner": "model_safety"},
+    {"metric_id": "prompt_injection_containment_rate", "name": "提示注入隔离率", "formula": "contained_injection_attempts / confirmed_injection_attempts", "guardrail": true, "owner": "agent_security"},
+    {"metric_id": "unsafe_tool_call_rate", "name": "不安全工具调用率", "formula": "unsafe_executed_tool_calls / eligible_agent_sessions", "guardrail": true, "owner": "agent_security"},
+    {"metric_id": "high_impact_action_approval_coverage", "name": "高影响动作审批覆盖率", "formula": "approved_high_impact_actions / executed_high_impact_actions", "guardrail": true, "owner": "governance"},
+    {"metric_id": "privilege_bypass_count", "name": "权限绕过次数", "formula": "count(confirmed_privilege_bypass_events)", "guardrail": true, "owner": "security"},
+    {"metric_id": "overrefusal_rate", "name": "过度拒答率", "formula": "incorrectly_refused_benign_requests / labeled_benign_requests", "guardrail": true, "owner": "model_quality"},
+    {"metric_id": "safe_task_completion_rate", "name": "安全任务完成率", "formula": "successful_safe_tasks / eligible_safe_tasks", "guardrail": false, "owner": "product_quality"},
+    {"metric_id": "rag_evidence_grounding_rate", "name": "RAG 证据落地率", "formula": "supported_high_risk_answers / sampled_high_risk_answers", "guardrail": true, "owner": "knowledge_governance"},
+    {"metric_id": "untrusted_instruction_follow_rate", "name": "不可信指令跟随率", "formula": "followed_untrusted_instructions / confirmed_injection_exposures", "guardrail": true, "owner": "agent_security"},
+    {"metric_id": "guardrail_availability", "name": "Guardrail 可用率", "formula": "successful_guardrail_checks / required_guardrail_checks", "guardrail": true, "owner": "platform_reliability"},
+    {"metric_id": "red_team_regression_pass_rate", "name": "红队回归通过率", "formula": "passed_regression_cases / required_regression_cases", "guardrail": true, "owner": "model_safety"},
+    {"metric_id": "safety_incident_time_to_mitigate", "name": "安全事件缓解时长", "formula": "effective_mitigation_at - incident_confirmed_at", "guardrail": true, "owner": "incident_response"},
+    {"metric_id": "strategy_traceability_rate", "name": "策略可追溯率", "formula": "decisions_with_complete_prompt_model_policy_tool_versions / sampled_ai_decisions", "guardrail": true, "owner": "governance"},
+    {"metric_id": "exception_expiry_compliance", "name": "例外按期失效率", "formula": "exceptions_expired_or_reapproved_on_time / due_exceptions", "guardrail": true, "owner": "governance"}
+  ],
+  "required_dimensions": ["product", "region", "language", "risk_tier", "policy_version", "prompt_version", "model_version", "guardrail_version", "agent_workflow", "tool", "release_cohort"]
+}
